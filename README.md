@@ -1,6 +1,8 @@
-# SolidWorks × Codex 使用手册
+# SolidWorks × Codex 静态分析插件
 
-**GitHub:** https://github.com/yysfei/solidworks-codex-skills
+> **首次推送**：Codex + SolidWorks MCP + 静力/疲劳仿真 Skills（Windows，SOLIDWORKS 2019+）
+
+**GitHub（公开仓库）：** https://github.com/yysfei/solidworks-codex-skills
 
 ```powershell
 git clone https://github.com/yysfei/solidworks-codex-skills.git
