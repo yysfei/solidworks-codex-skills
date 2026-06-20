@@ -1,0 +1,22 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python (MCP install target is outside repo; ignore local venv if any)
+.venv/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+solidworks_mcp.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Codex local overrides (machine-specific)
+.codex/*.local.toml

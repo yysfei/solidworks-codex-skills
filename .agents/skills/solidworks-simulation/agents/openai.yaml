@@ -1,0 +1,7 @@
+interface:
+  display_name: "SolidWorks Simulation"
+  short_description: "Static, motion, fatigue FEA via Simulation API macros"
+  default_prompt: "Set up a static stress analysis for the active SolidWorks model."
+
+policy:
+  allow_implicit_invocation: true

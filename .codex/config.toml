@@ -1,0 +1,15 @@
+﻿# SolidWorks MCP 鈥?project-scoped (Codex merges with ~/.codex/config.toml)
+# Regenerate: .agents/skills/solidworks-mcp/scripts/install.ps1
+
+[features]
+skills = true
+
+[mcp_servers.solidworks]
+command = "C:\\Users\\ThinkPad\\Projects\\Solidworks-MCP\\.venv\\Scripts\\python.exe"
+args = ["C:\\Users\\ThinkPad\\Projects\\Solidworks-MCP\\solidworks_mcp_server.py"]
+startup_timeout_sec = 30
+tool_timeout_sec = 120
+default_tools_approval_mode = "auto"
+
+[mcp_servers.solidworks.env]
+SOLIDWORKS_VISIBLE = "1"

@@ -1,0 +1,14 @@
+interface:
+  display_name: "SolidWorks MCP"
+  short_description: "Install and use SolidWorks MCP with Codex on Windows"
+  default_prompt: "Install and verify SolidWorks MCP, then connect to SOLIDWORKS."
+
+policy:
+  allow_implicit_invocation: true
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "solidworks"
+      description: "SolidWorks COM automation MCP server"
+      transport: "stdio"
