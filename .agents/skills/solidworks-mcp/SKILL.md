@@ -73,6 +73,10 @@ Or natural language (implicit match):
 
 `connect_solidworks`, `get_solidworks_info`, `create_new_part`, `draw_circle`, `extrude_sketch`, `open_document`, `execute_python`, … (22 tools). See [reference.md](reference.md).
 
+## Feature tree fallback
+
+On SOLIDWORKS 2019 / COM late-binding, `list_features`, `get_document_info`, or `list_open_documents` can return incomplete data or COM wrapper errors. If `list_features` only returns `Favorites`, use `execute_python` with `scripts/list_feature_tree_execute_python.py` and enumerate `FeatureByPositionReverse(index)`.
+
 ## FEA / Simulation
 
 MCP = CAD only. For static, fatigue, motion → **$solidworks-simulation**

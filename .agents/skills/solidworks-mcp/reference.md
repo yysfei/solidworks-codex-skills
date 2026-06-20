@@ -24,6 +24,22 @@ SOLIDWORKS.exe (local)
 | Features | `extrude_sketch`, `cut_extrude`, `fillet_edges`, `chamfer_edges`, `list_features` |
 | Utilities | `set_units`, `execute_python` |
 
+## Listing a feature tree
+
+Preferred path:
+
+1. `connect_solidworks`
+2. `open_document` with the full `.SLDPRT` / `.SLDASM` path
+3. `list_features`
+
+If the built-in tool returns only `Favorites`, or `get_document_info` / `list_open_documents` fails with COM wrapper errors such as `'int' object is not callable` or `Member not found`, use `execute_python` with:
+
+```text
+scripts/list_feature_tree_execute_python.py
+```
+
+This fallback uses `ModelDoc2.GetFeatureCount` plus `FeatureByPositionReverse(index)`. It reads the same model even when `FirstFeature` is unavailable through SW2019 late-bound pywin32 COM. The order is reverse position order, commonly from the end/bottom of the feature tree back toward root items.
+
 ## SOLIDWORKS 2019 patches
 
 Applied by `scripts/patch-sw2019.ps1`:

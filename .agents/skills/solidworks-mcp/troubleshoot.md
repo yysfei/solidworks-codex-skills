@@ -42,6 +42,18 @@ Re-run `install.ps1` from this skill.
 - ProgID: `SldWorks.Application.27`
 - Extrude API may need VBA fallback for complex features — use `execute_python` or record macro
 
+## Feature tree only shows `Favorites`
+
+Symptoms seen on SOLIDWORKS 2019 / pywin32 late-bound COM:
+
+- `list_features` returns only `Favorites`
+- `get_document_info` fails with `'int' object is not callable`
+- `list_open_documents` fails with `Member not found`
+- `ModelDoc2.FirstFeature()` is not exposed or reports `Member not found`
+- `FeatureManager.GetFeatureTreeRootItem2()` returns only the root display node
+
+Use `execute_python` with `scripts/list_feature_tree_execute_python.py`. The fallback confirms `ActiveDoc`, prints the path, calls `GetFeatureCount`, then enumerates features with `FeatureByPositionReverse(index)`. This recovered 213 feature names from a SW2019 part where the built-in MCP feature list only returned `Favorites`.
+
 ## Simulation / FEA
 
 This MCP has **22 CAD tools**, not full Simulation MCP. For static/fatigue/motion FEA:
