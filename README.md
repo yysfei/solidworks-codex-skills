@@ -1,5 +1,13 @@
 # SolidWorks × Codex 使用手册
 
+**GitHub:** https://github.com/yysfei/solidworks-codex-skills
+
+```powershell
+git clone https://github.com/yysfei/solidworks-codex-skills.git
+cd solidworks-codex-skills
+powershell -ExecutionPolicy Bypass -File ".agents\skills\solidworks-mcp\scripts\install.ps1"
+```
+
 本目录 `C:\Users\ThinkPad\Desktop\codex` 是面向 **OpenAI Codex CLI** 的独立工作区，包含：
 
 - **MCP 配置** — 让 Codex 调用本机 SOLIDWORKS（COM）
